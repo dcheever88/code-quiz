@@ -1,4 +1,4 @@
-# code-quiz
+
 # Code Quiz
 
 ## Coding Multiple-Choice Quiz
