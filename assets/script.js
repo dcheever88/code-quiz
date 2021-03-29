@@ -4,6 +4,7 @@ var questionsContainer = document.querySelector("#questionsContainer")
 var questionText = document.querySelector("#question")
 var answers = document.querySelector("#answers")
 
+
 var questionsArray = [
     { 
         question: "Arrays in javascript can be used to store:", 
@@ -21,14 +22,19 @@ var questionsArray = [
         correctAnswer: "alerts",
     },
     {
-        question: "String values must be enclosed within __ when being assigned to variables:",
-        choices: ["
-        "]
+        question: "String values must be enclosed within ___ when being assigned to variables:",
+        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+        correctAnswer: "quotes",
+    },
+    {
+        question: "The Condition in an if/else statement is enclosed with ____:",
+        choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        correctAnswer: "square brackests",
     }
 
 ]
 
-var timeLeft = 3
+var timeLeft = 60
 
 
 function countdown() {
@@ -46,9 +52,10 @@ function startQuiz() {
     displayQuestion();
 };
 
-startButton.addEventListener("click", startQuiz)
+startButton.addEventListener("click", startQuiz);
 
 var questionIndex = 0
+var score = 0;
 
 function displayQuestion() {
     var currentQuestion = questionsArray[questionIndex]
@@ -61,15 +68,26 @@ function displayQuestion() {
         answerText.setAttribute("class", "answer-button");
         answers.appendChild(answerText)
     }
+
+    answerText.addEventListener("click", function() {
+        score++;
+        console.log(score)
+    })
+
     // add event listener to class "answer-button", listener would call check answer function
+    
+};
 
-}
 
 
-// make array of questions (each question should be an object)
-    // nested array of possible choices with property for correct answer
 
-// write functionality for working timer and display on page
+
+
+
+// make array of questions (each question should be an object) - done i beleive
+    // nested array of possible choices with property for correct answer - done i beleive
+
+// write functionality for working timer and display on page - done i beleive
 
 // write functionality to loop through questions and click listeners on answer
 
